@@ -8,10 +8,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Avenir';
+  font-size: $text-medium;
 }
 
-:global(h1), :global(h2) {
+:global(h1) {
   margin: 0;
+  font-size: $text-xlarge;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+:global(h2) {
+  margin: 0;
+  font-size: $text-large;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 :global(input) {
@@ -30,4 +41,24 @@ body {
 
 :global(table) {
   border-collapse: collapse;
+}
+
+:global(.text-xsmall) {
+  font-size: $text-xsmall;
+}
+
+:global(.text-small) {
+  font-size: $text-small;
+}
+
+:global(.text-medium) {
+  font-size: $text-medium;
+}
+
+:global(.text-large) {
+  font-size: $text-large;
+}
+
+:global(.text-xlarge) {
+  font-size: $text-xlarge;
 }
