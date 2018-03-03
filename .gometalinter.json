@@ -1,0 +1,5 @@
+{
+  "Deadline": "1m",
+  "Disable": ["gas", "maligned", "vetshadow"],
+  "Test": true
+}
