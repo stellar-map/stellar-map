@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Table from '../ui/Table';
 
-import styles from './Home.scss';
+// import styles from './Home.scss';
 
 export default class Home extends React.Component {
   render(): JSX.Element {

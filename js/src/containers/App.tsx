@@ -18,7 +18,7 @@ export default class App extends React.Component {
         <div className={styles.body}>
           <RegularContainer>
             <Switch>
-              <Route exact path='/' component={Home} />>
+              <Route exact={true} path='/' component={Home} />>
             </Switch>
           </RegularContainer>
         </div>
