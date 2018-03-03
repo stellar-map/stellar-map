@@ -1,0 +1,52 @@
+@import '../../variables';
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  background-color: #b1edfd;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-right: 30px;
+  color: $text-blue;
+
+  &:hover {
+    color: $text-blue;
+  }
+}
+
+.menuItem {
+  margin-right: 26px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.searchInput {
+  width: 300px;
+  padding: 8px 10px;
+}

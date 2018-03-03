@@ -1,0 +1,14 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  min-height: 200px;
+  padding-top: 5vh;
+  background-image: url('../../images/blockchain.jpg');
+  background-attachment: fixed;
+  color: white;
+}
+
+.title {
+  margin-bottom: 50px;
+}
