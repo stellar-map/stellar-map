@@ -11,8 +11,8 @@ const Header: React.SFC = (): JSX.Element => (
       <div className={styles.content}>
         <div className={styles.main}>
           <a href='/' className={styles.logoLink}>
-            <img src={logo} className={styles.logo} alt="logo" />
-            <h1 className={styles.title}>TITLE HERE</h1>
+            <img src={logo} className={styles.logo} alt='logo' />
+            <h1 className={styles.title}>StellarMap</h1>
           </a>
           <nav>
             <a href='/' className={styles.menuItem}>Home</a>
@@ -22,7 +22,7 @@ const Header: React.SFC = (): JSX.Element => (
         </div>
         <input
           className={styles.searchInput}
-          placeholder="Search by transaction, address, block"
+          placeholder='Search by transaction, address, block'
         />
       </div>
     </RegularContainer>
