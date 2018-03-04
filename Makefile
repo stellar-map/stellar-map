@@ -1,10 +1,11 @@
-CMDS := server
+CMDS := stellarmap migrate
 
 $(CMDS):
 	go build -o bin/$@ go/cmd/$@/*.go
 
 dev:
-	go run go/cmd/server/*.go
+	go build -o bin/stellarmap go/cmd/stellarmap/*.go
+	bin/stellarmap
 
 test:
 	ginkgo -p go/...
