@@ -9,25 +9,31 @@ body {
   padding: 0;
   font-family: 'Avenir';
   font-size: $text-medium;
+  color: #414248;
 }
 
 :global(h1) {
   margin: 0;
   font-size: $text-xlarge;
-  font-weight: 400;
+  font-weight: $weight-regular;
   line-height: 1.4;
 }
 
 :global(h2) {
   margin: 0;
   font-size: $text-large;
-  font-weight: 400;
+  font-weight: $weight-regular;
   line-height: 1.4;
 }
 
 :global(input) {
+  font-size: $text-small;
   border: 0;
   outline: 0;
+
+  ::placeholder {
+    color: $gray;
+  }
 }
 
 :global(a) {
@@ -35,30 +41,10 @@ body {
   text-decoration: none;
 
   &:hover {
-    color: blue;
+    color: $text-dark-blue;
   }
 }
 
 :global(table) {
   border-collapse: collapse;
-}
-
-:global(.text-xsmall) {
-  font-size: $text-xsmall;
-}
-
-:global(.text-small) {
-  font-size: $text-small;
-}
-
-:global(.text-medium) {
-  font-size: $text-medium;
-}
-
-:global(.text-large) {
-  font-size: $text-large;
-}
-
-:global(.text-xlarge) {
-  font-size: $text-xlarge;
 }

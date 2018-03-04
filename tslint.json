@@ -35,6 +35,7 @@
     "no-unused-expression": [true, "allow-fast-null-checks"],
     "no-unused-variable": true,
     "object-curly-spacing": true,
+    "object-literal-key-quotes": [true, "as-needed"],
     "object-literal-sort-keys": false,
     "quotemark": [true, "single", "jsx-single", "avoid-escape"],
     "semicolon": [true, "always", "ignore-interfaces", "ignore-bound-class-methods"],

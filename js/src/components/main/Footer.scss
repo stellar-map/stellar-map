@@ -1,10 +1,12 @@
+@import '../../variables';
+
 .root {
   display: flex;
   justify-content: center;
   padding: 30px 0;
-  background-color: lightgray;
+  background-color: #f6f6f6;
 }
 
 .copyright {
-  color: gray;
+  color: $gray;
 }

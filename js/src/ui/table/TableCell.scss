@@ -1,0 +1,37 @@
+.root {
+  flex: 1;
+  padding: 6px 10px;
+  text-align: center;
+
+  &:first-of-type {
+    text-align: left;
+  }
+
+  &:last-of-type {
+    text-align: right;
+  }
+}
+
+.size1 {
+  flex: 1;
+}
+
+.size2 {
+  flex: 1.2;
+}
+
+.size4 {
+  flex: 1.4;
+}
+
+.size6 {
+  flex: 1.6;
+}
+
+.size8 {
+  flex: 1.8;
+}
+
+.size10 {
+  flex: 2;
+}
