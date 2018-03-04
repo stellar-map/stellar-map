@@ -1,0 +1,2 @@
+db:
+  url: postgres://postgres:@127.0.0.1:5432/stellarmap_development?sslmode=disable
