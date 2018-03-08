@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<div
+  className="root"
+>
+  <RegularContainer>
+    <div
+      className="copyright text-xsmall"
+    >
+      © 2018 StellarMap
+    </div>
+  </RegularContainer>
+</div>
+`;
