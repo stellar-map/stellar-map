@@ -115,6 +115,12 @@ func (db *db) PagingToken(resource string) (string, error) {
 		if err == nil {
 			return l.PagingToken, nil
 		}
+	case "transaction":
+		t := &transaction{}
+		err = db.Order("created_at DESC").First(t).Error
+		if err == nil {
+			return t.PagingToken, nil
+		}
 	default:
 		return "", errors.Errorf("unknown resource %s", resource)
 	}

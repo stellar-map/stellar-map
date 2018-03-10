@@ -80,7 +80,7 @@ func (i *HorizonIngester) Ledgers(ctx context.Context, cursor Cursor) error {
 				fields := log.Fields{"start": ledgers[0].Sequence, "end": ledgers[count-1].Sequence}
 				i.logger.WithError(err).WithFields(fields).Error("failed to create ledgers")
 			}
-			i.logger.WithField("count", count).Info("ingested new records")
+			i.logger.WithField("count", count).Info("ingested new ledgers")
 
 			ledgers = make([]*entities.Ledger, 0, i.BatchSize)
 			timer = time.Now().Add(i.BatchWaitDelay)
@@ -95,7 +95,7 @@ func (i *HorizonIngester) Ledgers(ctx context.Context, cursor Cursor) error {
 
 // Transactions ingests the transaction resource.
 func (i *HorizonIngester) Transactions(ctx context.Context, cursor Cursor) error {
-	horizonCursor, err := i.horizonCursorForResource("transactions", cursor)
+	horizonCursor, err := i.horizonCursorForResource("transaction", cursor)
 	if err != nil {
 		return errors.Wrap(err, "error parsing cursor")
 	}
@@ -117,7 +117,7 @@ func (i *HorizonIngester) Transactions(ctx context.Context, cursor Cursor) error
 			if err := i.repo.BatchCreateTransactions(transactions); err != nil {
 				i.logger.WithError(err).Error("failed to create transactions")
 			}
-			i.logger.WithField("count", count).Info("ingested new records")
+			i.logger.WithField("count", count).Info("ingested new transactions")
 
 			transactions = make([]*entities.Transaction, 0, i.BatchSize)
 			timer = time.Now().Add(i.BatchWaitDelay)
