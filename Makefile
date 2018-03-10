@@ -8,10 +8,10 @@ dev:
 	bin/stellarmap
 
 generate:
-	go generate go/...
+	go generate ./...
 
 test:
-	ginkgo -p go/...
+	ginkgo go/...
 
 lint:
 	gometalinter go/...
@@ -20,5 +20,6 @@ tools:
 	go get -u github.com/golang/dep/cmd/dep
 	go get -u github.com/onsi/ginkgo/ginkgo
 	go get -u github.com/alecthomas/gometalinter
+	go get -u github.com/golang/mock/mockgen
 
 .PHONY: $(CMDS) dev test lint tools
