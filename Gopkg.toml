@@ -27,15 +27,15 @@
 
 [prune]
   go-tests = true
-  unused-packages = true
 
 [[constraint]]
   name = "github.com/pkg/errors"
   version = "0.8.0"
 
 [[constraint]]
-  branch = "master"
+  branch = "resource-streaming"
   name = "github.com/stellar/go"
+  source = "github.com/martinxsliu/go"
 
 [[constraint]]
   name = "github.com/spf13/cobra"
@@ -60,3 +60,7 @@
 [[constraint]]
   name = "github.com/sirupsen/logrus"
   version = "1.0.4"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/golang/mock"
