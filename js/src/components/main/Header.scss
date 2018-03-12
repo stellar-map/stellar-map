@@ -3,8 +3,7 @@
 .header {
   display: flex;
   justify-content: center;
-  padding: 6px;
-  background-color: #b1edfd;
+  padding: 10px 0;
 }
 
 .content {
@@ -21,20 +20,17 @@
 .logoLink {
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .logo {
-  height: 50px;
-  width: 50px;
+  height: 26px;
+  width: 26px;
+  margin-right: 10px;
 }
 
-.title {
-  margin-right: 30px;
-  color: $text-blue;
-
-  &:hover {
-    color: $text-blue;
-  }
+.name {
+  font-size: 24px;
 }
 
 .menuItem {
@@ -46,6 +42,8 @@
 }
 
 .searchInput {
-  width: 300px;
-  padding: 8px 10px;
+  width: 310px;
+  padding: 9px 13px;
+  background-color: #e8f4fe;
+  border-radius: 2px;
 }

@@ -1,0 +1,33 @@
+@import './variables';
+
+.textXsmall {
+  font-size: $text-xsmall;
+}
+
+.textSmall {
+  font-size: $text-small;
+}
+
+.textMedium {
+  font-size: $text-medium;
+}
+
+.textLarge {
+  font-size: $text-large;
+}
+
+.textXlarge {
+  font-size: $text-xlarge;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.weightMedium {
+  font-weight: $weight-medium;
+}
+
+.weightSemibold {
+  font-weight: $weight-semibold;
+}

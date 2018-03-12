@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardContainer {
+  flex: 1;
+  margin: 0 20px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.cardHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}

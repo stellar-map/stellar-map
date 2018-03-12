@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.root {
+  display: flex;
+
+  &:hover {
+    background-color: $lighter-gray;
+  }
+}

@@ -2,16 +2,17 @@ import * as React from 'react';
 
 import RegularContainer from '../../ui/RegularContainer';
 
+import typography from '../../typography.scss';
 import styles from './Footer.scss';
 
 const Footer: React.SFC = () => (
-  <div className={styles.root}>
+  <section className={styles.root}>
     <RegularContainer>
-      <div className={`${styles.copyright} text-xsmall`}>
+      <div className={`${styles.copyright} ${typography.textXsmall}`}>
         &copy; 2018 StellarMap
       </div>
     </RegularContainer>
-  </div>
+  </section>
 );
 
 export default Footer;
