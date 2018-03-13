@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import axios from 'axios';
+
 import Card from '../../ui/Card';
 import FullWidthSection from '../../ui/FullWidthSection';
 import Table from '../../ui/table/Table';
@@ -17,96 +19,105 @@ const COLUMN_TO_SIZE: { [header: string]: TableCellSizes } = {
   closed_at: 'size8',
 };
 
-const BlockchainSection: React.SFC = (): JSX.Element => {
-  // TODO: Replace with real data
-  const orderedHeaders = [
-    {
-      key: 'sequence',
-      label: 'Sequence',
-    },
-    {
-      key: 'transactions',
-      label: 'Transactions',
-    },
-    {
-      key: 'operations',
-      label: 'Operations',
-    },
-    {
-      key: 'closed_at',
-      label: 'Closed At',
-    },
-  ];
-  const rows = [
-    {
-      sequence: '16612351',
-      transactions: 2,
-      operations: 2,
-      closed_at: '5/5/18 3:20PM PST',
-    },
-    {
-      sequence: '16612350',
-      transactions: 5,
-      operations: 12,
-      closed_at: '5/5/18 3:18PM PST',
-    },
-    {
-      sequence: '16612349',
-      transactions: 1,
-      operations: 20,
-      closed_at: '5/5/18 3:10PM PST',
-    },
-  ];
-
-  return (
-    <FullWidthSection title='Examine blockchain details'>
-      <div className={styles.content}>
-        <div className={styles.cardContainer}>
-          <Card>
-            <div className={styles.cardHeading}>
-              <h2 className={`${typography.weightMedium}`}>Latest ledgers</h2>
-              <a href='/'>See all &rarr;</a>
-            </div>
-            <Table>
-              <TableHeader columns={orderedHeaders} columnToSize={COLUMN_TO_SIZE} />
-              {rows.map((rowData, i) => (
-                <TableRow key={i}>
-                  {orderedHeaders.map((header) => (
-                    <TableCell
-                      column={header.key}
-                      key={`${header}-${rowData[header.key]}`}
-                      size={COLUMN_TO_SIZE[header.key]}>
-                      {rowData[header.key]}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </Table>
-          </Card>
-        </div>
-        <div className={styles.cardContainer}>
-          <Card>
-            <div className={styles.cardHeading}>
-              <h2 className={`${typography.weightMedium}`}>Latest transactions</h2>
-              <a href='/'>See all &rarr;</a>
-            </div>
-            <Table>
-              {/* <TableHeader columnNames={orderedHeaders} />
-              <tbody>
-                {rows.map((rowData, i) => (
-                  <tr className={`${styles.tableRow} ${typography.textSmall}`} key={i}>
-                    {orderedHeaders.map(header => (
-                      <TableCell key={`${header}-${rowData[header]}`}>{rowData[header]}</TableCell>
-                    ))}
-                  </tr>
-                ))}
-              </tbody> */}
-            </Table>
-          </Card>
-        </div>
-      </div>
-    </FullWidthSection>
-  );
+type State = {
+  recentLedgers: Array<Ledger>,
 };
 
-export default BlockchainSection;
+export default class BlockchainSection extends React.Component<{}, State> {
+  async componentDidMount(): Promise<void> {
+    const recentLedgers = await axios('https://horizon.stellar.org/ledgers?order=desc&limit=10');
+    this.setState({ recentLedgers });
+  }
+
+  render(): JSX.Element {
+    // TODO: Replace with real data
+    const orderedHeaders = [
+      {
+        key: 'sequence',
+        label: 'Sequence',
+      },
+      {
+        key: 'transactions',
+        label: 'Transactions',
+      },
+      {
+        key: 'operations',
+        label: 'Operations',
+      },
+      {
+        key: 'closed_at',
+        label: 'Closed At',
+      },
+    ];
+    const rows = [
+      {
+        sequence: '16612351',
+        transactions: 2,
+        operations: 2,
+        closed_at: '5/5/18 3:20PM PST',
+      },
+      {
+        sequence: '16612350',
+        transactions: 5,
+        operations: 12,
+        closed_at: '5/5/18 3:18PM PST',
+      },
+      {
+        sequence: '16612349',
+        transactions: 1,
+        operations: 20,
+        closed_at: '5/5/18 3:10PM PST',
+      },
+    ];
+
+    return (
+      <FullWidthSection title='Examine blockchain details'>
+        <div className={styles.content}>
+          <div className={styles.cardContainer}>
+            <Card>
+              <div className={styles.cardHeading}>
+                <h2 className={`${typography.weightMedium}`}>Latest ledgers</h2>
+                <a href='/'>See all &rarr;</a>
+              </div>
+              <Table>
+                <TableHeader columns={orderedHeaders} columnToSize={COLUMN_TO_SIZE} />
+                {rows.map((rowData, i) => (
+                  <TableRow key={i}>
+                    {orderedHeaders.map((header) => (
+                      <TableCell
+                        column={header.key}
+                        key={`${header}-${rowData[header.key]}`}
+                        size={COLUMN_TO_SIZE[header.key]}>
+                        {rowData[header.key]}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </Table>
+            </Card>
+          </div>
+          <div className={styles.cardContainer}>
+            <Card>
+              <div className={styles.cardHeading}>
+                <h2 className={`${typography.weightMedium}`}>Latest transactions</h2>
+                <a href='/'>See all &rarr;</a>
+              </div>
+              <Table>
+                {/* <TableHeader columnNames={orderedHeaders} />
+                <tbody>
+                  {rows.map((rowData, i) => (
+                    <tr className={`${styles.tableRow} ${typography.textSmall}`} key={i}>
+                      {orderedHeaders.map(header => (
+                        <TableCell key={`${header}-${rowData[header]}`}>{rowData[header]}</TableCell>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody> */}
+              </Table>
+            </Card>
+          </div>
+        </div>
+      </FullWidthSection>
+    );
+  }
+}
