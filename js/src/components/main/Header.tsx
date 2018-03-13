@@ -37,5 +37,4 @@ Header.defaultProps = {
   shade: 'light',
 };
 
-
 export default Header;

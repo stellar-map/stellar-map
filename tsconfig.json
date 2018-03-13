@@ -3,7 +3,8 @@
     "allowJs": true,             // allow a partial TypeScript and JavaScript codebase
     "allowSyntheticDefaultImports": true,
     "jsx": "react",             // use typescript to transpile jsx to js
-    "module": "es6",            // specifiy module code generation
+    "lib": ["es2015", "dom"],
+    "module": "es2015",            // specifiy module code generation
     "moduleResolution": "node",
     "noEmit": true,
     "sourceMap": true,          // allow sourcemap support
