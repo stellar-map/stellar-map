@@ -1,12 +1,18 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import RegularContainer from '../../ui/RegularContainer';
 
 import StellarRocket from '../../images/stellar_rocket.png';
 import styles from './Header.scss';
 
-const Header: React.SFC = (): JSX.Element => (
-  <header className={styles.header}>
+type Props = {
+  shade?: 'light' | 'dark',
+};
+
+const Header: React.SFC<Props> = (props: Props): JSX.Element => (
+  <header className={classNames({ [styles.root]: true, [styles.dark]: props.shade === 'dark' })}>
     <RegularContainer>
       <div className={styles.content}>
         <div className={styles.main}>
@@ -27,4 +33,9 @@ const Header: React.SFC = (): JSX.Element => (
     </RegularContainer>
   </header>
 );
+Header.defaultProps = {
+  shade: 'light',
+};
+
+
 export default Header;

@@ -1,9 +1,17 @@
 @import '../../variables';
 
-.header {
+.root {
   display: flex;
   justify-content: center;
   padding: 10px 0;
+
+  .searchInput {
+    background-color: $white;
+  }
+}
+
+.dark {
+  background-color: $lighter-gray;
 }
 
 .content {

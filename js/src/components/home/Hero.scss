@@ -1,7 +1,9 @@
+@import '../../variables';
+
 .content {
   height: 30vh;
   min-height: 200px;
-  color: #fff;
+  color: $white;
 }
 
 .title {
